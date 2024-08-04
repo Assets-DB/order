@@ -23,9 +23,7 @@ CREATE TABLE "order" (
     "created_at"        TIMESTAMP 	  NOT NULL  DEFAULT CURRENT_TIMESTAMP,
     "updated_at"        TIMESTAMP 	  NOT NULL  DEFAULT CURRENT_TIMESTAMP,
 
-    CHECK (frequency BETWEEN 1 AND 7),
-
-    CHECK (total_sessions 	>= 0 AND total_sessions <= 31)
+    CHECK (frequency BETWEEN 1 AND 7)
 );
 
 
@@ -64,6 +62,7 @@ CREATE TABLE "order_detail" (
         EXTRACT(YEAR FROM start_date) = EXTRACT(YEAR FROM finish_date)
     ),
 
+    CHECK (total_sessions 	>= 0 AND total_sessions <= 31),
     CHECK (coinsurance 		>= 0),
     CHECK ("value" 	>= 0),
     CHECK (cost 	>= 0)
