@@ -14,6 +14,7 @@ CREATE TABLE "order" (
     "order_id"          INTEGER generated ALWAYS as IDENTITY PRIMARY KEY,
     "client_fk"         INTEGER         NOT NULL,
     "patient_fk"        INTEGER         NOT NULL,
+    "company_fk"        INTEGER         NOT NULL,
     "treatment_fk"      INTEGER         NOT NULL,
     "frequency"         SMALLINT        NOT NULL,
     "total_sessions"    SMALLINT        NOT NULL,
