@@ -63,9 +63,11 @@ CREATE TABLE "order_detail" (
     ),
 
     CHECK (total_sessions 	>= 0 AND total_sessions <= 31),
-    CHECK (coinsurance 		>= 0),
+    CHECK ("sessions" <= total_sessions),
+    CHECK (coinsurance >= 0),
     CHECK ("value" 	>= 0),
     CHECK (cost 	>= 0)
+
 );
 
 
